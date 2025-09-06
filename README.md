@@ -1,4 +1,3 @@
-````markdown
 # Alternative Credit Scoring — Leak-Safe, Calibrated, Explainable, Economics-Aware
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/downloads/)
@@ -300,6 +299,3 @@ AltRiskML/
 
 * Feel free to open issues/PRs for improvements (feature engineering, hyperparameter sweeps, API deployment, dashboards, etc.).
 * Ensure any new features respect the leakage policy and calibration/monitoring hooks already in place.
-
-```
-```
