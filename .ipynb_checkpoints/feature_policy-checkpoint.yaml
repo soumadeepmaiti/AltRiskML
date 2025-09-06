@@ -1,0 +1,24 @@
+drop_always: [CustomerID]
+post_decision: [InterestRate, BaseInterestRate, MonthlyLoanPayment]  # remove if you want pre-decision score
+allowed:
+  - Age
+  - AnnualIncome
+  - EmploymentStatus
+  - EducationLevel
+  - Experience
+  - LoanAmount
+  - LoanDuration
+  - MaritalStatus
+  - NumberOfDependents
+  - HomeOwnershipStatus
+  - MonthlyDebtPayments
+  - LoanPurpose
+  - SavingsAccountBalance
+  - CheckingAccountBalance
+  - TotalAssets
+  - TotalLiabilities
+  - MonthlyIncome
+  - UtilityBillsPaymentHistory
+  - JobTenure
+  - NetWorth
+  - TotalDebtToIncomeRatio

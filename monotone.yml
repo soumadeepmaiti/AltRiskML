@@ -1,0 +1,46 @@
+# Monotonic constraints for LightGBM
+# +1  => model PD should be NON-DECREASING as the feature increases (higher -> higher risk)
+# -1  => model PD should be NON-INCREASING as the feature increases (higher -> lower risk)
+#  0  => no constraint (use when effect may be non-monotonic or feature is categorical/encoded)
+#
+# Notes:
+# - Constraints apply only to continuous/ordered features. For label-encoded categoricals, keep 0.
+# - Missing columns are ignored by the code; this file is a best-effort map.
+
+# --- Financial capacity / buffers (more -> safer) ---
+AnnualIncome: -1                 # higher income -> lower PD
+MonthlyIncome: -1                # higher disposable income -> lower PD
+TotalAssets: -1                  # more assets -> lower PD
+NetWorth: -1                     # higher net worth -> lower PD
+SavingsAccountBalance: -1        # larger cushion -> lower PD
+CheckingAccountBalance: -1       # more liquidity -> lower PD
+JobTenure: -1                    # longer tenure -> lower PD
+Experience: -1                   # more years of experience -> lower PD
+UtilityBillsPaymentHistory: -1   # better payment history metric -> lower PD (assumed higher=better)
+
+# --- Indebtedness / burden (more -> riskier) ---
+LoanAmount: +1                   # larger principal -> higher PD
+LoanDuration: +1                 # longer term -> higher PD (more uncertainty)
+MonthlyDebtPayments: +1          # higher existing obligations -> higher PD
+TotalLiabilities: +1             # more liabilities -> higher PD
+TotalDebtToIncomeRatio: +1       # higher DTI -> higher PD
+MonthlyLoanPayment: +1           # higher scheduled payment -> higher PD (affordability)
+
+# --- Rates / pricing (usually post-decision; constrain only if kept) ---
+BaseInterestRate: +1             # higher base rate often aligns with higher risk
+InterestRate: +1                 # higher priced loans tend to be riskier
+
+# --- Demographics & possibly non-monotonic relationships ---
+Age: 0                           # effect can be U-shaped; leave unconstrained
+
+# --- Categorical features (do NOT apply monotone constraints) ---
+EmploymentStatus: 0              # categorical
+EducationLevel: 0                # categorical
+MaritalStatus: 0                 # categorical
+HomeOwnershipStatus: 0           # categorical
+LoanPurpose: 0                   # categorical
+NumberOfDependents: 0            # could be monotone (+1) but not strictly so; leave 0
+
+# --- Pricing/derived (often post-decision; set to 0 if excluded) ---
+BaseInterestRate: +1
+InterestRate: +1

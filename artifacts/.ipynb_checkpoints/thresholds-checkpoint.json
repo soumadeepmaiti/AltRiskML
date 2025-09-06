@@ -1,0 +1,61 @@
+{
+  "best_tau": 0.99,
+  "best_EV_sum": 1223.1455494599331,
+  "approval_rate_at_best": 0.61125,
+  "approve_threshold": 0.99,
+  "review_band": {
+    "low": 0.3,
+    "high": 0.6
+  },
+  "profit_curve_png": "graphs/profit_curve.png",
+  "ev_table_preview": [
+    {
+      "tau": 0.1,
+      "approved": 266,
+      "approval_rate": 0.0665,
+      "EL_sum": -1.5939848982647395,
+      "Revenue_sum": 141.21402224128252,
+      "EV_sum": 142.80800713954727
+    },
+    {
+      "tau": 0.2,
+      "approved": 435,
+      "approval_rate": 0.10875,
+      "EL_sum": -6.397116908573001,
+      "Revenue_sum": 235.38425653286777,
+      "EV_sum": 241.7813734414408
+    },
+    {
+      "tau": 0.3,
+      "approved": 589,
+      "approval_rate": 0.14725,
+      "EL_sum": -13.17306045188855,
+      "Revenue_sum": 314.4561125226822,
+      "EV_sum": 327.62917297457074
+    },
+    {
+      "tau": 0.99,
+      "approved": 2445,
+      "approval_rate": 0.61125,
+      "EL_sum": -121.76159531113802,
+      "Revenue_sum": 1101.3839541487953,
+      "EV_sum": 1223.1455494599331
+    },
+    {
+      "tau": 0.5,
+      "approved": 849,
+      "approval_rate": 0.21225,
+      "EL_sum": -28.272189871525818,
+      "Revenue_sum": 444.46624147298473,
+      "EV_sum": 472.7384313445105
+    },
+    {
+      "tau": 0.6,
+      "approved": 974,
+      "approval_rate": 0.2435,
+      "EL_sum": -38.80485081764691,
+      "Revenue_sum": 501.49096430214274,
+      "EV_sum": 540.2958151197897
+    }
+  ]
+}
